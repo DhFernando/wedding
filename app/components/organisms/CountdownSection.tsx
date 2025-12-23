@@ -43,10 +43,7 @@ export function CountdownSection() {
       }
     };
 
-    // Calculate immediately
     calculateTimeLeft();
-    
-    // Update every second
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
@@ -54,14 +51,14 @@ export function CountdownSection() {
 
   if (!mounted) {
     return (
-      <section className="py-24 md:py-32 px-6 bg-gradient-to-b from-wedding-blush/30 via-wedding-cream to-wedding-background">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-wedding-blush/30 via-wedding-cream to-wedding-background">
         <div className="max-w-4xl mx-auto text-center">
-          <Text variant="h2" className="text-wedding-text mb-4">
+          <Text variant="h2" className="text-wedding-text mb-4 text-2xl sm:text-3xl md:text-4xl">
             Counting Down To Forever
           </Text>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 mt-8 sm:mt-12">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/50 animate-pulse" />
+              <div key={i} className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full bg-white/50 animate-pulse" />
             ))}
           </div>
         </div>
@@ -70,40 +67,40 @@ export function CountdownSection() {
   }
 
   return (
-    <section className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
       {/* Beautiful layered gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-blush/50 via-wedding-gold-light/40 to-wedding-cream" />
       
-      {/* Animated background circles */}
+      {/* Animated background circles - Hidden on mobile */}
       <motion.div 
-        className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-wedding-accent/10 blur-3xl"
+        className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-wedding-accent/10 blur-3xl hidden md:block"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute bottom-20 right-[10%] w-80 h-80 rounded-full bg-wedding-primary/10 blur-3xl"
+        className="absolute bottom-20 right-[10%] w-80 h-80 rounded-full bg-wedding-primary/10 blur-3xl hidden md:block"
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
       
-      {/* Decorative pattern */}
+      {/* Decorative pattern - Hidden on mobile */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] hidden sm:block"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b8860b' fill-opacity='1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0 5.5 4.5 10 10 10s10-4.5 10-10-4.5-10-10-10-10 4.5-10 10z'/%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Floating elements */}
+      {/* Floating elements - Hidden on mobile */}
       <motion.div
-        className="absolute top-24 right-20 opacity-20"
+        className="absolute top-24 right-20 opacity-20 hidden lg:block"
         animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Icon name="heart" size="xl" className="text-wedding-primary" />
       </motion.div>
       <motion.div
-        className="absolute bottom-32 left-16 opacity-20"
+        className="absolute bottom-32 left-16 opacity-20 hidden lg:block"
         animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
@@ -117,10 +114,11 @@ export function CountdownSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-4"
+          className="mb-3 sm:mb-4"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20 mb-4">
-            <Icon name="heart" size="md" className="text-wedding-accent" />
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20 mb-3 sm:mb-4">
+            <Icon name="heart" size="sm" className="text-wedding-accent sm:hidden" />
+            <Icon name="heart" size="md" className="text-wedding-accent hidden sm:block" />
           </div>
         </motion.div>
 
@@ -130,19 +128,19 @@ export function CountdownSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Text variant="h2" className="text-wedding-text mb-2">
+          <Text variant="h2" className="text-wedding-text mb-1 sm:mb-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl">
             Counting Down To Forever
           </Text>
-          <Text variant="caption" className="text-wedding-primary/70 uppercase tracking-[0.25em] text-xs">
+          <Text variant="caption" className="text-wedding-primary/70 uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[10px] sm:text-xs">
             The beginning of our forever
           </Text>
         </motion.div>
         
-        <Divider variant="ornate" className="my-10" />
+        <Divider variant="ornate" className="my-6 sm:my-10" />
 
         {/* Countdown items with enhanced styling */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-10"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -156,19 +154,19 @@ export function CountdownSection() {
 
         {/* Bottom text with enhanced styling */}
         <motion.div
-          className="mt-14"
+          className="mt-8 sm:mt-14"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="inline-flex flex-col items-center gap-3 px-8 py-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-wedding-primary/10 shadow-lg">
-            <Text variant="script" className="text-wedding-primary text-xl md:text-2xl">
+          <div className="inline-flex flex-col items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/60 backdrop-blur-sm border border-wedding-primary/10 shadow-lg">
+            <Text variant="script" className="text-wedding-primary text-base sm:text-xl md:text-2xl">
               Until we say &ldquo;I Do&rdquo;
             </Text>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Icon name="calendar" size="sm" className="text-wedding-accent" />
-              <Text variant="caption" className="text-wedding-text/80 font-medium">
+              <Text variant="caption" className="text-wedding-text/80 font-medium text-xs sm:text-sm">
                 {date.displayDate}
               </Text>
             </div>

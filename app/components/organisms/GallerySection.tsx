@@ -9,20 +9,20 @@ export function GallerySection() {
   const { gallery, couple } = weddingConfig;
 
   return (
-    <section id="gallery" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="gallery" className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
       {/* Beautiful gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-background via-wedding-cream to-wedding-blush/40" />
       
-      {/* Decorative elements */}
+      {/* Decorative elements - Hidden on mobile */}
       <motion.div 
-        className="absolute top-32 right-16 opacity-15"
+        className="absolute top-32 right-16 opacity-15 hidden lg:block"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
         <Icon name="heart" size="xl" className="text-wedding-primary" />
       </motion.div>
       <motion.div 
-        className="absolute bottom-40 left-10 opacity-15"
+        className="absolute bottom-40 left-10 opacity-15 hidden lg:block"
         animate={{ y: [0, 15, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
@@ -30,24 +30,28 @@ export function GallerySection() {
       </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="mb-3 sm:mb-4"
           >
-            <Icon name="heart" size="lg" className="text-wedding-accent mb-4" animate />
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
+              <Icon name="heart" size="sm" className="text-wedding-accent sm:hidden" />
+              <Icon name="heart" size="md" className="text-wedding-accent hidden sm:block" />
+            </div>
           </motion.div>
-          <Text variant="h2" className="text-wedding-text mb-4" animate>
+          <Text variant="h2" className="text-wedding-text mb-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl" animate>
             Our Moments
           </Text>
-          <Divider variant="flower" className="my-8" />
-          <Text variant="body" className="text-wedding-text/70 max-w-2xl mx-auto" animate>
+          <Divider variant="flower" className="my-5 sm:my-8" />
+          <Text variant="body" className="text-wedding-text/70 max-w-2xl mx-auto text-sm sm:text-base" animate>
             A glimpse into our journey together
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
           {gallery.map((image, index) => (
             <GalleryItem
               key={index}
@@ -60,16 +64,16 @@ export function GallerySection() {
         </div>
 
         <motion.div 
-          className="text-center mt-14"
+          className="text-center mt-8 sm:mt-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-wedding-gold-light/50 border border-wedding-primary/20">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-wedding-gold-light/50 border border-wedding-primary/20">
             <Icon name="instagram" size="sm" className="text-wedding-primary" />
-            <Text variant="caption" className="text-wedding-primary font-medium">
-              Share your photos with us using {couple.hashtag}
+            <Text variant="caption" className="text-wedding-primary font-medium text-[10px] sm:text-sm">
+              {couple.hashtag}
             </Text>
           </div>
         </motion.div>

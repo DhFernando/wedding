@@ -8,28 +8,28 @@ export function EventDetails() {
   const { venue, date } = weddingConfig;
 
   return (
-    <section id="details" className="py-24 md:py-36 px-6 relative overflow-hidden">
+    <section id="details" className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
       {/* Elegant layered background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-cream via-wedding-background to-wedding-blush/30" />
       
-      {/* Decorative background pattern */}
+      {/* Decorative background pattern - Hidden on mobile */}
       <div 
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] hidden sm:block"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8860b' fill-opacity='1'%3E%3Cpath d='M50 50c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10c0 5.5-4.5 10-10 10s-10-4.5-10-10 4.5-10 10-10zM10 10c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10c0 5.5-4.5 10-10 10S0 25.5 0 20s4.5-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Floating decorative elements */}
+      {/* Floating decorative elements - Hidden on mobile */}
       <motion.div
-        className="absolute top-20 right-16 opacity-15"
+        className="absolute top-20 right-16 opacity-15 hidden lg:block"
         animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       >
         <Icon name="church" size="xl" className="text-wedding-primary" />
       </motion.div>
       <motion.div
-        className="absolute bottom-32 left-12 opacity-15"
+        className="absolute bottom-32 left-12 opacity-15 hidden lg:block"
         animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
@@ -38,15 +38,16 @@ export function EventDetails() {
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4"
+            className="mb-3 sm:mb-4"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
-              <Icon name="calendar" size="md" className="text-wedding-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
+              <Icon name="calendar" size="sm" className="text-wedding-primary sm:hidden" />
+              <Icon name="calendar" size="md" className="text-wedding-primary hidden sm:block" />
             </div>
           </motion.div>
           <motion.div
@@ -55,72 +56,73 @@ export function EventDetails() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <Text variant="h2" className="text-wedding-text mb-2">
+            <Text variant="h2" className="text-wedding-text mb-1 sm:mb-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl">
               Wedding Celebrations
             </Text>
-            <Text variant="caption" className="text-wedding-primary/70 uppercase tracking-[0.25em] text-xs">
+            <Text variant="caption" className="text-wedding-primary/70 uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[10px] sm:text-xs">
               Two ceremonies, one beautiful love
             </Text>
           </motion.div>
-          <Divider variant="flower" className="my-10" />
+          <Divider variant="flower" className="my-6 sm:my-10" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Text variant="body" className="text-wedding-text/70 max-w-2xl mx-auto">
+            <Text variant="body" className="text-wedding-text/70 max-w-2xl mx-auto text-sm sm:text-base">
               We would be honored to have you celebrate this special day with us
             </Text>
           </motion.div>
         </div>
 
         {/* Two Event Cards with enhanced design */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-14">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 mb-8 sm:mb-14">
           {/* Church Ceremony Card */}
           <motion.div
             className="group relative"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Decorative frame */}
-            <div className="absolute -inset-2 bg-gradient-to-br from-wedding-primary/20 to-wedding-accent/20 rounded-[2rem] blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Decorative frame - Hidden on mobile */}
+            <div className="absolute -inset-2 bg-gradient-to-br from-wedding-primary/20 to-wedding-accent/20 rounded-[2rem] blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" />
             
             <div 
-              className="relative card-elegant rounded-3xl p-8 md:p-10 text-center cursor-pointer hover:shadow-2xl transition-all duration-500 overflow-hidden"
+              className="relative card-elegant rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 text-center cursor-pointer hover:shadow-2xl transition-all duration-500 overflow-hidden"
               onClick={() => window.open(venue.googleMapsChurch, "_blank")}
             >
               {/* Top accent line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-wedding-primary to-transparent rounded-full" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-1 bg-gradient-to-r from-transparent via-wedding-primary to-transparent rounded-full" />
               
               {/* Icon */}
               <motion.div
-                className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-wedding-gold-light via-white to-wedding-blush flex items-center justify-center shadow-lg border border-wedding-primary/20"
+                className="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-wedding-gold-light via-white to-wedding-blush flex items-center justify-center shadow-lg border border-wedding-primary/20"
                 whileHover={{ rotate: 10, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Icon name="church" size="lg" className="text-wedding-primary" />
+                <Icon name="church" size="md" className="text-wedding-primary sm:hidden" />
+                <Icon name="church" size="lg" className="text-wedding-primary hidden sm:block" />
               </motion.div>
               
               {/* Content */}
-              <div className="space-y-3">
-                <Text variant="caption" className="text-wedding-accent uppercase tracking-[0.2em] text-xs font-medium">
+              <div className="space-y-2 sm:space-y-3">
+                <Text variant="caption" className="text-wedding-accent uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-medium">
                   Church Ceremony
                 </Text>
-                <Text variant="h3" className="text-wedding-text">
+                <Text variant="h3" className="text-wedding-text text-lg sm:text-xl md:text-2xl">
                   {venue.ceremony.name}
                 </Text>
-                <Text variant="body" className="text-wedding-text/70">
+                <Text variant="body" className="text-wedding-text/70 text-sm sm:text-base">
                   {venue.ceremony.location}
                 </Text>
                 
                 {/* Time badge */}
-                <div className="pt-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-wedding-gold-light/50 border border-wedding-primary/15">
+                <div className="pt-3 sm:pt-4">
+                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-wedding-gold-light/50 border border-wedding-primary/15">
                     <Icon name="clock" size="sm" className="text-wedding-primary" />
-                    <Text variant="caption" className="text-wedding-primary font-semibold">
+                    <Text variant="caption" className="text-wedding-primary font-semibold text-xs sm:text-sm">
                       {venue.ceremony.time}
                     </Text>
                   </div>
@@ -128,9 +130,9 @@ export function EventDetails() {
               </div>
 
               {/* Click indicator */}
-              <div className="mt-6 flex items-center justify-center gap-2 text-wedding-primary/60 group-hover:text-wedding-primary transition-colors">
+              <div className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-wedding-primary/60 group-hover:text-wedding-primary transition-colors">
                 <Icon name="location" size="sm" />
-                <Text variant="caption" className="text-xs">Click for directions</Text>
+                <Text variant="caption" className="text-[10px] sm:text-xs">Click for directions</Text>
               </div>
             </div>
           </motion.div>
@@ -138,47 +140,48 @@ export function EventDetails() {
           {/* Poruwa & Reception Card */}
           <motion.div
             className="group relative"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Decorative frame */}
-            <div className="absolute -inset-2 bg-gradient-to-br from-wedding-accent/20 to-wedding-primary/20 rounded-[2rem] blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Decorative frame - Hidden on mobile */}
+            <div className="absolute -inset-2 bg-gradient-to-br from-wedding-accent/20 to-wedding-primary/20 rounded-[2rem] blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden sm:block" />
             
             <div 
-              className="relative card-elegant rounded-3xl p-8 md:p-10 text-center cursor-pointer hover:shadow-2xl transition-all duration-500 overflow-hidden"
+              className="relative card-elegant rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 text-center cursor-pointer hover:shadow-2xl transition-all duration-500 overflow-hidden"
               onClick={() => window.open(venue.googleMapsReception, "_blank")}
             >
               {/* Top accent line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-wedding-accent to-transparent rounded-full" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-1 bg-gradient-to-r from-transparent via-wedding-accent to-transparent rounded-full" />
               
               {/* Icon */}
               <motion.div
-                className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-wedding-blush via-white to-wedding-gold-light flex items-center justify-center shadow-lg border border-wedding-accent/20"
+                className="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-wedding-blush via-white to-wedding-gold-light flex items-center justify-center shadow-lg border border-wedding-accent/20"
                 whileHover={{ rotate: -10, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Icon name="party" size="lg" className="text-wedding-accent" />
+                <Icon name="party" size="md" className="text-wedding-accent sm:hidden" />
+                <Icon name="party" size="lg" className="text-wedding-accent hidden sm:block" />
               </motion.div>
               
               {/* Content */}
-              <div className="space-y-3">
-                <Text variant="caption" className="text-wedding-primary uppercase tracking-[0.2em] text-xs font-medium">
+              <div className="space-y-2 sm:space-y-3">
+                <Text variant="caption" className="text-wedding-primary uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-medium">
                   Poruwa & Reception
                 </Text>
-                <Text variant="h3" className="text-wedding-text">
+                <Text variant="h3" className="text-wedding-text text-lg sm:text-xl md:text-2xl">
                   {venue.reception.name}
                 </Text>
-                <Text variant="body" className="text-wedding-text/70">
+                <Text variant="body" className="text-wedding-text/70 text-sm sm:text-base">
                   {venue.reception.location}
                 </Text>
                 
                 {/* Time badge */}
-                <div className="pt-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-wedding-blush/50 border border-wedding-accent/15">
+                <div className="pt-3 sm:pt-4">
+                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-wedding-blush/50 border border-wedding-accent/15">
                     <Icon name="clock" size="sm" className="text-wedding-accent" />
-                    <Text variant="caption" className="text-wedding-accent font-semibold">
+                    <Text variant="caption" className="text-wedding-accent font-semibold text-xs sm:text-sm">
                       {venue.reception.time}
                     </Text>
                   </div>
@@ -186,9 +189,9 @@ export function EventDetails() {
               </div>
 
               {/* Click indicator */}
-              <div className="mt-6 flex items-center justify-center gap-2 text-wedding-accent/60 group-hover:text-wedding-accent transition-colors">
+              <div className="mt-4 sm:mt-6 flex items-center justify-center gap-2 text-wedding-accent/60 group-hover:text-wedding-accent transition-colors">
                 <Icon name="location" size="sm" />
-                <Text variant="caption" className="text-xs">Click for directions</Text>
+                <Text variant="caption" className="text-[10px] sm:text-xs">Click for directions</Text>
               </div>
             </div>
           </motion.div>
@@ -196,7 +199,7 @@ export function EventDetails() {
 
         {/* Map Links Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -204,7 +207,9 @@ export function EventDetails() {
         >
           <Button
             variant="outline"
+            size="sm"
             onClick={() => window.open(venue.googleMapsChurch, "_blank")}
+            className="w-full sm:w-auto"
           >
             <span className="flex items-center gap-2">
               <Icon name="location" size="sm" />
@@ -213,7 +218,9 @@ export function EventDetails() {
           </Button>
           <Button
             variant="primary"
+            size="sm"
             onClick={() => window.open(venue.googleMapsReception, "_blank")}
+            className="w-full sm:w-auto"
           >
             <span className="flex items-center gap-2">
               <Icon name="location" size="sm" />
@@ -223,57 +230,56 @@ export function EventDetails() {
         </motion.div>
 
         {/* Additional Info Cards with enhanced design */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6">
           {/* Date Card */}
           <motion.div
-            className="card-elegant rounded-2xl p-8 text-center relative overflow-hidden group"
+            className="card-elegant rounded-xl sm:rounded-2xl p-3 sm:p-8 text-center relative overflow-hidden group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-wedding-primary/30 to-transparent" />
-            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-wedding-gold-light to-wedding-blush flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-              <Icon name="calendar" size="md" className="text-wedding-primary" />
+            <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-wedding-primary/30 to-transparent" />
+            <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 sm:mb-4 rounded-full bg-gradient-to-br from-wedding-gold-light to-wedding-blush flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+              <Icon name="calendar" size="sm" className="text-wedding-primary" />
             </div>
-            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-xs mb-1">Date</Text>
-            <Text variant="h4" className="text-wedding-primary font-semibold">{date.displayDate}</Text>
+            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-[8px] sm:text-xs mb-0.5 sm:mb-1 block">Date</Text>
+            <Text variant="h4" className="text-wedding-primary font-semibold text-[10px] sm:text-base md:text-lg">{date.displayDate}</Text>
           </motion.div>
 
           {/* Time Card */}
           <motion.div
-            className="card-elegant rounded-2xl p-8 text-center relative overflow-hidden group"
+            className="card-elegant rounded-xl sm:rounded-2xl p-3 sm:p-8 text-center relative overflow-hidden group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-wedding-accent/30 to-transparent" />
-            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-wedding-blush to-wedding-gold-light flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-              <Icon name="clock" size="md" className="text-wedding-accent" />
+            <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-wedding-accent/30 to-transparent" />
+            <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 sm:mb-4 rounded-full bg-gradient-to-br from-wedding-blush to-wedding-gold-light flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+              <Icon name="clock" size="sm" className="text-wedding-accent" />
             </div>
-            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-xs mb-1">Time</Text>
-            <Text variant="h4" className="text-wedding-accent font-semibold">{date.displayTime}</Text>
+            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-[8px] sm:text-xs mb-0.5 sm:mb-1 block">Time</Text>
+            <Text variant="h4" className="text-wedding-accent font-semibold text-[10px] sm:text-base md:text-lg">{date.displayTime}</Text>
           </motion.div>
 
           {/* Dress Code Card */}
           <motion.div
-            className="card-elegant rounded-2xl p-8 text-center relative overflow-hidden group"
+            className="card-elegant rounded-xl sm:rounded-2xl p-3 sm:p-8 text-center relative overflow-hidden group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-wedding-secondary/30 to-transparent" />
-            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-wedding-cream to-wedding-blush flex items-center justify-center shadow-md group-hover:scale-110 transition-transform text-2xl">
+            <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-wedding-secondary/30 to-transparent" />
+            <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 sm:mb-4 rounded-full bg-gradient-to-br from-wedding-cream to-wedding-blush flex items-center justify-center shadow-md group-hover:scale-110 transition-transform text-base sm:text-2xl">
               👔
             </div>
-            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-xs mb-1">Dress Code</Text>
-            <Text variant="h4" className="text-wedding-secondary font-semibold">Formal Attire</Text>
-            <Text variant="caption" className="text-wedding-text/50 text-xs mt-1">Traditional or Western</Text>
+            <Text variant="caption" className="text-wedding-text/60 uppercase tracking-wider text-[8px] sm:text-xs mb-0.5 sm:mb-1 block">Dress Code</Text>
+            <Text variant="h4" className="text-wedding-secondary font-semibold text-[10px] sm:text-base md:text-lg">Formal</Text>
           </motion.div>
         </div>
       </div>
