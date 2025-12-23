@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Transition } from "framer-motion";
 import { ReactNode } from "react";
 
 interface TextProps {
@@ -26,69 +26,100 @@ export function Text({
   className = "",
   animate = false,
 }: TextProps) {
-  const Component = animate ? motion.p : "p";
-
+  const transition: Transition = { duration: 0.6, ease: "easeOut" };
+  
   const animationProps = animate
     ? {
         initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true },
-        transition: { duration: 0.6, ease: "easeOut" },
+        transition,
       }
     : {};
 
+  const combinedClassName = `${variantStyles[variant]} ${className}`;
+
   if (variant === "h1") {
-    const H1Component = animate ? motion.h1 : "h1";
-    return (
-      <H1Component
-        className={`${variantStyles[variant]} ${className}`}
-        {...animationProps}
-      >
-        {children}
-      </H1Component>
-    );
+    if (animate) {
+      return (
+        <motion.h1
+          className={combinedClassName}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={transition}
+        >
+          {children}
+        </motion.h1>
+      );
+    }
+    return <h1 className={combinedClassName}>{children}</h1>;
   }
 
   if (variant === "h2") {
-    const H2Component = animate ? motion.h2 : "h2";
-    return (
-      <H2Component
-        className={`${variantStyles[variant]} ${className}`}
-        {...animationProps}
-      >
-        {children}
-      </H2Component>
-    );
+    if (animate) {
+      return (
+        <motion.h2
+          className={combinedClassName}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={transition}
+        >
+          {children}
+        </motion.h2>
+      );
+    }
+    return <h2 className={combinedClassName}>{children}</h2>;
   }
 
   if (variant === "h3") {
-    const H3Component = animate ? motion.h3 : "h3";
-    return (
-      <H3Component
-        className={`${variantStyles[variant]} ${className}`}
-        {...animationProps}
-      >
-        {children}
-      </H3Component>
-    );
+    if (animate) {
+      return (
+        <motion.h3
+          className={combinedClassName}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={transition}
+        >
+          {children}
+        </motion.h3>
+      );
+    }
+    return <h3 className={combinedClassName}>{children}</h3>;
   }
 
   if (variant === "h4") {
-    const H4Component = animate ? motion.h4 : "h4";
+    if (animate) {
+      return (
+        <motion.h4
+          className={combinedClassName}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={transition}
+        >
+          {children}
+        </motion.h4>
+      );
+    }
+    return <h4 className={combinedClassName}>{children}</h4>;
+  }
+
+  if (animate) {
     return (
-      <H4Component
-        className={`${variantStyles[variant]} ${className}`}
-        {...animationProps}
+      <motion.p
+        className={combinedClassName}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={transition}
       >
         {children}
-      </H4Component>
+      </motion.p>
     );
   }
 
-  return (
-    <Component className={`${variantStyles[variant]} ${className}`} {...animationProps}>
-      {children}
-    </Component>
-  );
+  return <p className={combinedClassName}>{children}</p>;
 }
-
