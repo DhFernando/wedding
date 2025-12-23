@@ -1,0 +1,2 @@
+export { WeddingLayout } from "./WeddingLayout";
+

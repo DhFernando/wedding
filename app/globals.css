@@ -1,26 +1,178 @@
 @import "tailwindcss";
 
+/* Wedding Theme Colors - Rich & Elegant Sri Lankan Wedding */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wedding-primary: #b8860b;
+  --wedding-secondary: #8b4513;
+  --wedding-accent: #e8a87c;
+  --wedding-background: #fffaf5;
+  --wedding-text: #3d3d3d;
+  --wedding-cream: #fff8f0;
+  --wedding-blush: #fce4d6;
+  --wedding-gold-light: #f5e6c8;
+  --wedding-rose: #e6b8a2;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Wedding color palette */
+  --color-wedding-primary: var(--wedding-primary);
+  --color-wedding-secondary: var(--wedding-secondary);
+  --color-wedding-accent: var(--wedding-accent);
+  --color-wedding-background: var(--wedding-background);
+  --color-wedding-text: var(--wedding-text);
+  --color-wedding-cream: var(--wedding-cream);
+  --color-wedding-blush: var(--wedding-blush);
+  --color-wedding-gold-light: var(--wedding-gold-light);
+  --color-wedding-rose: var(--wedding-rose);
+  
+  /* Font families */
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Lato", "Open Sans", system-ui, sans-serif;
+  --font-script: "Great Vibes", "Dancing Script", cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, var(--wedding-background) 0%, var(--wedding-cream) 50%, var(--wedding-blush) 100%);
+  background-attachment: fixed;
+  color: var(--wedding-text);
+  font-family: "Lato", "Open Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+.font-serif {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+.font-sans {
+  font-family: "Lato", "Open Sans", system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: "Great Vibes", "Dancing Script", cursive;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--wedding-accent);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--wedding-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--wedding-primary), var(--wedding-accent));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wedding-secondary);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--wedding-primary);
+  outline-offset: 2px;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth Transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Form Elements - Override browser defaults */
+input, select, textarea {
+  color-scheme: light;
+  background-color: #ffffff !important;
+  color: var(--wedding-text) !important;
+}
+
+select option {
+  background-color: #ffffff;
+  color: var(--wedding-text);
+}
+
+/* Animation Utilities */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Elegant Card Backgrounds */
+.card-elegant {
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 248, 240, 0.9) 50%, 
+    rgba(252, 228, 214, 0.85) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 134, 11, 0.15);
+  box-shadow: 
+    0 4px 20px rgba(184, 134, 11, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Gradient Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--wedding-primary) 0%, var(--wedding-accent) 50%, var(--wedding-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
