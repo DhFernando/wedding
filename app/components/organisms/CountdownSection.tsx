@@ -70,42 +70,6 @@ export function CountdownSection() {
     <section className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
       {/* Beautiful layered gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-blush/50 via-wedding-gold-light/40 to-wedding-cream" />
-      
-      {/* Animated background circles - Hidden on mobile */}
-      <motion.div 
-        className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-wedding-accent/10 blur-3xl hidden md:block"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute bottom-20 right-[10%] w-80 h-80 rounded-full bg-wedding-primary/10 blur-3xl hidden md:block"
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      
-      {/* Decorative pattern - Hidden on mobile */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] hidden sm:block"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b8860b' fill-opacity='1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0 5.5 4.5 10 10 10s10-4.5 10-10-4.5-10-10-10-10 4.5-10 10z'/%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Floating elements - Hidden on mobile */}
-      <motion.div
-        className="absolute top-24 right-20 opacity-20 hidden lg:block"
-        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Icon name="heart" size="xl" className="text-wedding-primary" />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-32 left-16 opacity-20 hidden lg:block"
-        animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <Icon name="flower" size="xl" className="text-wedding-accent" />
-      </motion.div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Header with icon */}
@@ -116,9 +80,8 @@ export function CountdownSection() {
           transition={{ duration: 0.6 }}
           className="mb-3 sm:mb-4"
         >
-          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20 mb-3 sm:mb-4">
-            <Icon name="heart" size="sm" className="text-wedding-accent sm:hidden" />
-            <Icon name="heart" size="md" className="text-wedding-accent hidden sm:block" />
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20 mb-3 sm:mb-4">
+            <Icon name="heart" size="md" className="text-wedding-accent" />
           </div>
         </motion.div>
 
@@ -138,7 +101,7 @@ export function CountdownSection() {
         
         <Divider variant="ornate" className="my-6 sm:my-10" />
 
-        {/* Countdown items with enhanced styling */}
+        {/* Countdown items */}
         <motion.div 
           className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-10"
           initial={{ opacity: 0, y: 30 }}
@@ -152,7 +115,7 @@ export function CountdownSection() {
           <CountdownItem value={timeLeft.seconds} label="Seconds" delay={0.3} />
         </motion.div>
 
-        {/* Bottom text with enhanced styling */}
+        {/* Bottom text */}
         <motion.div
           className="mt-8 sm:mt-14"
           initial={{ opacity: 0 }}

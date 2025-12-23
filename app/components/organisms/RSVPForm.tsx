@@ -37,10 +37,7 @@ export function RSVPForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
@@ -50,32 +47,6 @@ export function RSVPForm() {
       <section id="rsvp" className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-wedding-blush/30 via-wedding-cream to-wedding-background" />
         
-        {/* Celebration confetti effect - Reduced on mobile */}
-        <div className="absolute inset-0 overflow-hidden hidden sm:block">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-3 h-3 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: -20,
-                backgroundColor: i % 2 === 0 ? '#b8860b' : '#e8a87c',
-              }}
-              animate={{
-                y: ['0vh', '100vh'],
-                rotate: [0, 360],
-                opacity: [1, 0],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-                ease: 'linear',
-              }}
-            />
-          ))}
-        </div>
-        
         <motion.div
           className="max-w-2xl mx-auto text-center relative z-10"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -83,7 +54,6 @@ export function RSVPForm() {
           transition={{ duration: 0.6 }}
         >
           <div className="card-elegant rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden">
-            {/* Decorative top border */}
             <div className="absolute top-0 left-0 right-0 h-1 sm:h-2 bg-gradient-to-r from-wedding-primary via-wedding-accent to-wedding-primary" />
             
             <motion.div
@@ -97,8 +67,7 @@ export function RSVPForm() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <Icon name="heart" size="lg" className="text-wedding-accent sm:hidden" />
-                  <Icon name="heart" size="xl" className="text-wedding-accent hidden sm:block" />
+                  <Icon name="heart" size="xl" className="text-wedding-accent" />
                 </motion.div>
               </div>
             </motion.div>
@@ -110,7 +79,7 @@ export function RSVPForm() {
             </Text>
             <div className="flex items-center justify-center gap-3">
               <span className="w-8 sm:w-12 h-px bg-wedding-primary/30" />
-              <Icon name="ring" size="sm" className="text-wedding-primary" />
+              <Icon name="ring" size="md" className="text-wedding-primary" />
               <span className="w-8 sm:w-12 h-px bg-wedding-primary/30" />
             </div>
             <Text variant="script" className="text-wedding-primary text-lg sm:text-xl mt-4">
@@ -124,44 +93,8 @@ export function RSVPForm() {
 
   return (
     <section id="rsvp" className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
-      {/* Beautiful gradient background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-cream via-wedding-blush/40 to-wedding-gold-light/30" />
-      
-      {/* Animated background shapes - Hidden on mobile */}
-      <motion.div 
-        className="absolute top-32 left-[5%] w-72 h-72 rounded-full bg-wedding-accent/10 blur-3xl hidden md:block"
-        animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute bottom-32 right-[5%] w-80 h-80 rounded-full bg-wedding-primary/10 blur-3xl hidden md:block"
-        animate={{ scale: [1.2, 1, 1.2], x: [0, -20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      
-      {/* Decorative pattern - Hidden on mobile */}
-      <div 
-        className="absolute inset-0 opacity-[0.02] hidden sm:block"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8860b' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Floating elements - Hidden on mobile */}
-      <motion.div
-        className="absolute top-24 right-20 opacity-15 hidden lg:block"
-        animate={{ y: [0, -20, 0], rotate: [0, 15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Icon name="email" size="xl" className="text-wedding-primary" />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-40 left-16 opacity-15 hidden lg:block"
-        animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <Icon name="heart" size="xl" className="text-wedding-accent" />
-      </motion.div>
 
       <div className="max-w-2xl mx-auto relative z-10">
         {/* Header */}
@@ -172,9 +105,8 @@ export function RSVPForm() {
             viewport={{ once: true }}
             className="mb-3 sm:mb-4"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
-              <Icon name="email" size="sm" className="text-wedding-primary sm:hidden" />
-              <Icon name="email" size="md" className="text-wedding-primary hidden sm:block" />
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
+              <Icon name="email" size="md" className="text-wedding-primary" />
             </div>
           </motion.div>
           <motion.div
@@ -206,7 +138,7 @@ export function RSVPForm() {
           </motion.div>
         </div>
 
-        {/* Form with enhanced styling */}
+        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           className="relative"
@@ -215,14 +147,7 @@ export function RSVPForm() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Decorative frame corners - Hidden on mobile */}
-          <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-wedding-primary/20 rounded-tl-3xl hidden sm:block" />
-          <div className="absolute -top-4 -right-4 w-16 h-16 border-t-2 border-r-2 border-wedding-primary/20 rounded-tr-3xl hidden sm:block" />
-          <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-2 border-l-2 border-wedding-primary/20 rounded-bl-3xl hidden sm:block" />
-          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-wedding-primary/20 rounded-br-3xl hidden sm:block" />
-          
           <div className="card-elegant rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
-            {/* Top decorative line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-wedding-primary to-transparent rounded-full" />
             
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
@@ -336,7 +261,6 @@ export function RSVPForm() {
                   <span className="flex items-center justify-center gap-2 sm:gap-3">
                     <Icon name="heart" size="sm" />
                     Send RSVP
-                    <Icon name="heart" size="sm" />
                   </span>
                 )}
               </Button>
@@ -344,7 +268,7 @@ export function RSVPForm() {
           </div>
         </motion.form>
 
-        {/* Contact Info with enhanced styling */}
+        {/* Contact Info */}
         <motion.div
           className="mt-8 sm:mt-14 text-center"
           initial={{ opacity: 0 }}
@@ -360,7 +284,7 @@ export function RSVPForm() {
               href={`mailto:${rsvp.contactEmail}`}
               className="group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/80 hover:bg-white border border-wedding-primary/15 hover:border-wedding-primary/30 shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto justify-center"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-gold-light flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-gold-light flex items-center justify-center">
                 <Icon name="email" size="sm" className="text-wedding-primary" />
               </div>
               <Text variant="caption" className="text-wedding-text/80 font-medium text-xs sm:text-sm truncate">
@@ -371,7 +295,7 @@ export function RSVPForm() {
               href={`tel:${rsvp.contactPhone.replace(/\s/g, '')}`}
               className="group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/80 hover:bg-white border border-wedding-accent/15 hover:border-wedding-accent/30 shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto justify-center"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-blush flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-blush flex items-center justify-center">
                 <Icon name="phone" size="sm" className="text-wedding-accent" />
               </div>
               <Text variant="caption" className="text-wedding-text/80 font-medium text-xs sm:text-sm">

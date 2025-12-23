@@ -12,22 +12,6 @@ export function GallerySection() {
     <section id="gallery" className="py-16 sm:py-24 md:py-36 px-4 sm:px-6 relative overflow-hidden">
       {/* Beautiful gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-wedding-background via-wedding-cream to-wedding-blush/40" />
-      
-      {/* Decorative elements - Hidden on mobile */}
-      <motion.div 
-        className="absolute top-32 right-16 opacity-15 hidden lg:block"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Icon name="heart" size="xl" className="text-wedding-primary" />
-      </motion.div>
-      <motion.div 
-        className="absolute bottom-40 left-10 opacity-15 hidden lg:block"
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <Icon name="flower" size="xl" className="text-wedding-accent" />
-      </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-10 sm:mb-16">
@@ -37,9 +21,8 @@ export function GallerySection() {
             viewport={{ once: true }}
             className="mb-3 sm:mb-4"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
-              <Icon name="heart" size="sm" className="text-wedding-accent sm:hidden" />
-              <Icon name="heart" size="md" className="text-wedding-accent hidden sm:block" />
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-blush shadow-lg border border-wedding-primary/20">
+              <Icon name="heart" size="md" className="text-wedding-accent" />
             </div>
           </motion.div>
           <Text variant="h2" className="text-wedding-text mb-2 text-xl sm:text-2xl md:text-4xl lg:text-5xl" animate>

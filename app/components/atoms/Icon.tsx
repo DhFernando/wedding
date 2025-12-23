@@ -10,7 +10,7 @@ import {
   FaEnvelope,
   FaPhone,
   FaInstagram,
-  FaFacebook,
+  FaFacebookF,
 } from "react-icons/fa";
 import { GiDiamondRing, GiChurch, GiPartyPopper } from "react-icons/gi";
 import { BsFlower1, BsArrowDown } from "react-icons/bs";
@@ -23,7 +23,7 @@ const iconMap: Record<string, IconType> = {
   email: FaEnvelope,
   phone: FaPhone,
   instagram: FaInstagram,
-  facebook: FaFacebook,
+  facebook: FaFacebookF,
   ring: GiDiamondRing,
   church: GiChurch,
   party: GiPartyPopper,
@@ -33,16 +33,17 @@ const iconMap: Record<string, IconType> = {
 
 interface IconProps {
   name: keyof typeof iconMap;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   className?: string;
   animate?: boolean;
 }
 
 const sizeStyles = {
+  xs: "w-3 h-3",
   sm: "w-4 h-4",
-  md: "w-6 h-6",
-  lg: "w-8 h-8",
-  xl: "w-12 h-12",
+  md: "w-5 h-5",
+  lg: "w-6 h-6",
+  xl: "w-8 h-8",
 };
 
 export function Icon({
@@ -60,7 +61,7 @@ export function Icon({
   if (animate) {
     return (
       <motion.span
-        className={`inline-flex ${className}`}
+        className={`inline-flex items-center justify-center ${className}`}
         initial={{ scale: 0, rotate: -180 }}
         whileInView={{ scale: 1, rotate: 0 }}
         viewport={{ once: true }}
@@ -72,9 +73,8 @@ export function Icon({
   }
 
   return (
-    <span className={`inline-flex ${className}`}>
+    <span className={`inline-flex items-center justify-center ${className}`}>
       <IconComponent className={sizeStyles[size]} />
     </span>
   );
 }
-

@@ -27,18 +27,9 @@ export function HeroSection() {
         {/* Multi-layer gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-wedding-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
-        
-        {/* Decorative overlay pattern - hidden on mobile */}
-        <div 
-          className="absolute inset-0 opacity-10 hidden md:block" 
-          style={{ 
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)', 
-            backgroundSize: '40px 40px' 
-          }} 
-        />
       </div>
 
-      {/* Floating Decorative Elements - Hidden on mobile for cleaner look */}
+      {/* Floating Decorative Elements - Hidden on mobile */}
       <motion.div
         className="absolute top-16 left-8 md:left-16 text-white/20 hidden md:block"
         animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
@@ -53,20 +44,6 @@ export function HeroSection() {
       >
         <Icon name="ring" size="xl" />
       </motion.div>
-      <motion.div
-        className="absolute bottom-36 right-8 md:right-16 text-white/20 hidden md:block"
-        animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <Icon name="flower" size="xl" />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-48 left-12 md:left-20 text-wedding-accent/30 hidden md:block"
-        animate={{ y: [0, -15, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      >
-        <Icon name="heart" size="lg" />
-      </motion.div>
 
       {/* Decorative corner frames - Hidden on mobile */}
       <div className="absolute top-8 left-8 w-20 h-20 border-t-2 border-l-2 border-white/20 rounded-tl-3xl hidden lg:block" />
@@ -76,7 +53,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pt-12 sm:pt-16 pb-28 sm:pb-32">
-        {/* Pre-title - Simplified for mobile */}
+        {/* Pre-title - Simplified */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -108,7 +85,7 @@ export function HeroSection() {
             </Text>
           </motion.div>
           
-          {/* Heart divider */}
+          {/* Heart divider - Single icon */}
           <motion.div
             className="my-3 sm:my-4 md:my-6 flex items-center justify-center gap-4 sm:gap-6"
             initial={{ scale: 0, opacity: 0 }}
@@ -125,8 +102,7 @@ export function HeroSection() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Icon name="heart" size="md" className="text-wedding-accent drop-shadow-lg sm:hidden" />
-              <Icon name="heart" size="lg" className="text-wedding-accent drop-shadow-lg hidden sm:block" />
+              <Icon name="heart" size="lg" className="text-wedding-accent drop-shadow-lg" />
             </motion.div>
             <motion.span 
               className="w-12 sm:w-16 md:w-28 h-px bg-gradient-to-l from-transparent via-white/60 to-wedding-accent/80"
@@ -148,17 +124,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Small decorative heart - Mobile only */}
-        <motion.div
-          className="flex justify-center my-4 sm:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <Icon name="heart" size="sm" className="text-wedding-accent/60" />
-        </motion.div>
-
-        {/* Elegant divider - Hidden on mobile, shown on larger screens */}
+        {/* Elegant divider - Hidden on small mobile */}
         <motion.div
           className="my-6 sm:my-8 md:my-10 hidden sm:block"
           initial={{ opacity: 0 }}
@@ -173,7 +139,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="space-y-2 sm:space-y-3"
+          className="space-y-2 sm:space-y-3 mt-6 sm:mt-0"
         >
           <Text variant="caption" className="text-wedding-accent uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[10px] sm:text-xs md:text-sm font-medium">
             Request the pleasure of your company
@@ -211,7 +177,7 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Better positioned for mobile */}
+      {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer z-20"
         initial={{ opacity: 0 }}
