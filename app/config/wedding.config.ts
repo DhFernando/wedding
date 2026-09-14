@@ -17,7 +17,7 @@ export const weddingConfig = {
   date: {
     wedding: new Date("2026-10-23T09:00:00"),
     displayDate: "October 23, 2026",
-    displayTime: "9:00 AM",
+    displayTime: "7.45 AM",
   },
 
   // Venue Information
@@ -26,14 +26,14 @@ export const weddingConfig = {
       name: "Our Lady of Consolation Church",
       location: "Ganemulla, Sri Lanka",
       address: "Our Lady of Consolation Church, Ganemulla",
-      time: "9:00 AM",
+      time: "7.45 AM",
       type: "Church Ceremony",
     },
     reception: {
       name: "The Glasgow",
       location: "Sri Lanka",
       address: "The Glasgow Wedding Venue",
-      time: "12:00 PM",
+      time: "10:00 AM",
       type: "Poruwa Ceremony & Reception",
     },
     googleMapsChurch: "https://maps.app.goo.gl/b51qRXUCLnKad1T68",
@@ -76,41 +76,56 @@ export const weddingConfig = {
     copyright: "Made with love 💕",
   },
 
-  // Gallery Images (Using royalty-free images from Unsplash - Sri Lankan/Asian wedding theme)
+  // Gallery Images (Using our own romantic moments)
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop",
-      alt: "Couple walking through garden",
-      credit: "Unsplash - Jeremy Wong",
+      src: "/images/DSC06247.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=400&fit=crop",
-      alt: "Romantic sunset moment",
-      credit: "Unsplash - Álvaro CvG",
+      src: "/images/DSC06399.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=400&fit=crop",
-      alt: "Couple embracing",
-      credit: "Unsplash - Samantha Gades",
+      src: "/images/DSC06510.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&h=400&fit=crop",
-      alt: "Wedding venue exterior",
-      credit: "Unsplash - Thomas William",
+      src: "/images/DSC06532.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=400&fit=crop",
-      alt: "Beautiful floral arrangement",
-      credit: "Unsplash - Beatriz Pérez Moya",
+      src: "/images/DSC07713.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=400&fit=crop",
-      alt: "Couple under tree",
-      credit: "Unsplash - Foto Pettine",
+      src: "/images/DSC08102.JPG",
+      alt: "Our Moment",
+      credit: "",
+    },
+    {
+      src: "/images/DSC08248.JPG",
+      alt: "Our Moment",
+      credit: "",
+    },
+    {
+      src: "/images/DSC08535.JPG",
+      alt: "Our Moment",
+      credit: "",
+    },
+    {
+      src: "/images/DSC08592.JPG",
+      alt: "Our Moment",
+      credit: "",
     },
   ],
 
   // Hero Background Image
   heroImage:
-    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&h=1080&fit=crop",
+    "/images/DSC08333.JPG",
 };

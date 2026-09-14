@@ -13,7 +13,7 @@ interface GalleryItemProps {
 export function GalleryItem({ src, alt, credit, delay = 0 }: GalleryItemProps) {
   return (
     <motion.div
-      className="relative group overflow-hidden rounded-lg sm:rounded-2xl shadow-lg sm:shadow-xl aspect-[3/2] 
+      className="relative group overflow-hidden rounded-lg sm:rounded-2xl shadow-lg sm:shadow-xl aspect-[3/4] 
                  border sm:border-2 border-white/50"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
