@@ -109,10 +109,10 @@ export function CountdownSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <CountdownItem value={timeLeft.days} label="Days" delay={0} />
-          <CountdownItem value={timeLeft.hours} label="Hours" delay={0.1} />
-          <CountdownItem value={timeLeft.minutes} label="Minutes" delay={0.2} />
-          <CountdownItem value={timeLeft.seconds} label="Seconds" delay={0.3} />
+          <CountdownItem value={timeLeft.days} label="Days" delay={0} bgImage="/images/DSC06247.JPG" />
+          <CountdownItem value={timeLeft.hours} label="Hours" delay={0.1} bgImage="/images/DSC06399.JPG" />
+          <CountdownItem value={timeLeft.minutes} label="Minutes" delay={0.2} bgImage="/images/DSC06510.JPG" />
+          <CountdownItem value={timeLeft.seconds} label="Seconds" delay={0.3} bgImage="/images/DSC06532.JPG" />
         </motion.div>
 
         {/* Bottom text */}

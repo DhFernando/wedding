@@ -98,11 +98,7 @@ export const weddingConfig = {
       alt: "Our Moment",
       credit: "",
     },
-    {
-      src: "/images/DSC07713.JPG",
-      alt: "Our Moment",
-      credit: "",
-    },
+
     {
       src: "/images/DSC08102.JPG",
       alt: "Our Moment",

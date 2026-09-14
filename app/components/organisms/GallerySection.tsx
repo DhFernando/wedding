@@ -34,7 +34,7 @@ export function GallerySection() {
           </Text>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           {gallery.map((image, index) => (
             <GalleryItem
               key={index}

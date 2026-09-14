@@ -7,9 +7,10 @@ interface CountdownItemProps {
   value: number;
   label: string;
   delay?: number;
+  bgImage?: string;
 }
 
-export function CountdownItem({ value, label, delay = 0 }: CountdownItemProps) {
+export function CountdownItem({ value, label, delay = 0, bgImage }: CountdownItemProps) {
   return (
     <motion.div
       className="flex flex-col items-center"
@@ -26,8 +27,17 @@ export function CountdownItem({ value, label, delay = 0 }: CountdownItemProps) {
         {/* Outer glow ring - Subtle on mobile */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-wedding-primary/10 sm:from-wedding-primary/20 to-wedding-accent/10 sm:to-wedding-accent/20 blur-sm sm:blur-md" />
         
-        {/* Main circle with gradient */}
-        <div className="absolute inset-0.5 sm:inset-1 rounded-full bg-gradient-to-br from-white via-wedding-cream to-wedding-gold-light shadow-lg sm:shadow-xl border sm:border-2 border-wedding-primary/20" />
+        {/* Main circle with background image or gradient */}
+        <div className="absolute inset-0.5 sm:inset-1 rounded-full shadow-lg sm:shadow-xl border sm:border-2 border-wedding-primary/20 overflow-hidden group">
+          {bgImage ? (
+            <>
+              <img src={bgImage} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-black/40 transition-colors duration-500 group-hover:bg-black/30" />
+            </>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-white via-wedding-cream to-wedding-gold-light" />
+          )}
+        </div>
         
         {/* Inner decorative ring - Hidden on mobile */}
         <div className="absolute inset-3 rounded-full border border-wedding-primary/10 hidden sm:block" />
