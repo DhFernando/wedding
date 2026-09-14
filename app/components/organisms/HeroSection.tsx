@@ -31,25 +31,25 @@ export function HeroSection() {
 
       {/* Floating Decorative Elements - Visible on all screens now */}
       <motion.div
-        className="absolute top-16 left-4 sm:left-8 md:left-16 text-white/20 md:text-white/20 opacity-60 md:opacity-100"
-        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+        className="absolute top-6 left-6 sm:top-12 sm:left-12 md:top-16 md:left-16 text-white/20 md:text-white/20 opacity-60 md:opacity-100"
+        animate={{ y: [0, -10, 0], rotate: [0, 10, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
         <Icon name="flower" size="xl" />
       </motion.div>
       <motion.div
-        className="absolute top-28 right-4 sm:right-12 md:right-24 text-wedding-accent/40 opacity-60 md:opacity-100"
-        animate={{ y: [0, 15, 0], rotate: [0, -15, 0] }}
+        className="absolute top-6 right-6 sm:top-12 sm:right-16 md:top-28 md:right-24 text-wedding-accent/40 opacity-60 md:opacity-100"
+        animate={{ y: [0, 10, 0], rotate: [0, -15, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
         <Icon name="ring" size="xl" />
       </motion.div>
 
       {/* Decorative corner frames - Visible on all screens now */}
-      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-12 sm:w-20 h-12 sm:h-20 border-t-2 border-l-2 border-white/20 rounded-tl-2xl sm:rounded-tl-3xl opacity-60 md:opacity-100" />
-      <div className="absolute top-4 sm:top-8 right-4 sm:right-8 w-12 sm:w-20 h-12 sm:h-20 border-t-2 border-r-2 border-white/20 rounded-tr-2xl sm:rounded-tr-3xl opacity-60 md:opacity-100" />
-      <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 w-12 sm:w-20 h-12 sm:h-20 border-b-2 border-l-2 border-white/20 rounded-bl-2xl sm:rounded-bl-3xl opacity-60 md:opacity-100" />
-      <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 w-12 sm:w-20 h-12 sm:h-20 border-b-2 border-r-2 border-white/20 rounded-br-2xl sm:rounded-br-3xl opacity-60 md:opacity-100" />
+      <div className="absolute top-3 sm:top-8 left-3 sm:left-8 w-14 sm:w-20 h-14 sm:h-20 border-t-2 border-l-2 border-white/20 rounded-tl-2xl sm:rounded-tl-3xl opacity-60 md:opacity-100" />
+      <div className="absolute top-3 sm:top-8 right-3 sm:right-8 w-14 sm:w-20 h-14 sm:h-20 border-t-2 border-r-2 border-white/20 rounded-tr-2xl sm:rounded-tr-3xl opacity-60 md:opacity-100" />
+      <div className="absolute bottom-3 sm:bottom-8 left-3 sm:left-8 w-14 sm:w-20 h-14 sm:h-20 border-b-2 border-l-2 border-white/20 rounded-bl-2xl sm:rounded-bl-3xl opacity-60 md:opacity-100" />
+      <div className="absolute bottom-3 sm:bottom-8 right-3 sm:right-8 w-14 sm:w-20 h-14 sm:h-20 border-b-2 border-r-2 border-white/20 rounded-br-2xl sm:rounded-br-3xl opacity-60 md:opacity-100" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pt-12 sm:pt-16 pb-28 sm:pb-32">
