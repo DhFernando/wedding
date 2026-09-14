@@ -108,7 +108,7 @@ From university friends to life partners, our journey has brought us here, ready
       credit: "",
     },
     {
-      src: "/images/DSC08535.JPG",
+      src: "/images/DSC07713.JPG",
       alt: "Our Moment",
       credit: "",
     },
