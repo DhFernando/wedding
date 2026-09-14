@@ -100,26 +100,7 @@ export function StorySection() {
           </div>
         </motion.div>
 
-        {/* University badge */}
-        <motion.div
-          className="mt-8 sm:mt-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <div className="inline-flex flex-col items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-wedding-gold-light/60 via-white/80 to-wedding-blush/60 border border-wedding-primary/15 shadow-lg">
-            <div className="flex items-center gap-2">
-              <span className="text-xl sm:text-2xl">🎓</span>
-              <Text variant="caption" className="text-wedding-text/80 text-xs sm:text-sm">
-                Where our story began:
-              </Text>
-            </div>
-            <Text variant="body" className="text-wedding-primary font-semibold text-xs sm:text-sm md:text-base text-center">
-              University of Sabaragamuwa, Sri Lanka
-            </Text>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

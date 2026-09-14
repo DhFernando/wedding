@@ -50,7 +50,7 @@ export function CountdownItem({ value, label, delay = 0, bgImage }: CountdownIte
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
           >
-            <span className="text-wedding-primary font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl font-serif">
+            <span className="text-white drop-shadow-md font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl font-serif">
               {value.toString().padStart(2, "0")}
             </span>
           </motion.div>

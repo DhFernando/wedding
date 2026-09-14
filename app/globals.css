@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-/* Wedding Theme Colors - Rich & Elegant Sri Lankan Wedding */
+/* Wedding Theme Colors - Elegant Blue Wedding */
 :root {
-  --wedding-primary: #b8860b;
-  --wedding-secondary: #8b4513;
-  --wedding-accent: #e8a87c;
-  --wedding-background: #fffaf5;
-  --wedding-text: #3d3d3d;
-  --wedding-cream: #fff8f0;
-  --wedding-blush: #fce4d6;
-  --wedding-gold-light: #f5e6c8;
-  --wedding-rose: #e6b8a2;
+  --wedding-primary: #1e3a8a;
+  --wedding-secondary: #475569;
+  --wedding-accent: #7dd3fc;
+  --wedding-background: #f8fafc;
+  --wedding-text: #0f172a;
+  --wedding-cream: #f1f5f9;
+  --wedding-blush: #e0f2fe;
+  --wedding-gold-light: #bfdbfe;
+  --wedding-rose: #cbd5e1;
 }
 
 @theme inline {
@@ -159,12 +159,12 @@ select option {
 .card-elegant {
   background: linear-gradient(145deg, 
     rgba(255, 255, 255, 0.95) 0%, 
-    rgba(255, 248, 240, 0.9) 50%, 
-    rgba(252, 228, 214, 0.85) 100%);
+    rgba(241, 245, 249, 0.9) 50%, 
+    rgba(224, 242, 254, 0.85) 100%);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(184, 134, 11, 0.15);
+  border: 1px solid rgba(30, 58, 138, 0.15);
   box-shadow: 
-    0 4px 20px rgba(184, 134, 11, 0.1),
+    0 4px 20px rgba(30, 58, 138, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }

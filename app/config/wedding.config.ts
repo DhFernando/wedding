@@ -42,32 +42,30 @@ export const weddingConfig = {
 
   // Our Story
   story: {
-    title: "Our Love Story",
-    content: `It all began within the hallowed halls of the University of Sabaragamuwa, Sri Lanka, where two souls destined 
-    to be together first crossed paths. What started as a beautiful friendship blossomed into something extraordinary — 
-    late-night study sessions turned into endless conversations, shared laughter echoed through the campus corridors, 
-    and before they knew it, their hearts had intertwined in the most magical way.
+    title: "Our Love Story ❤️",
+    content: `Four years of friendship at university gave us countless memories, endless laughter, and a bond we’ll always cherish.
     
-    Years of cherished friendship laid the foundation for a love that was meant to be. Like the gentle dawn that follows 
-    the night, their love grew naturally, patiently, and beautifully. From best friends who knew each other's every dream 
-    and fear, they became each other's forever — proof that the greatest love stories are written by destiny itself.`,
-    quote: "From best friends to soulmates — our love story was written in the stars.",
+What started as a beautiful friendship slowly blossomed into something deeper — a love we never knew we were waiting for. ❤️
+
+From university friends to life partners, our journey has brought us here, ready to begin the most beautiful chapter of our lives together.`,
+    quote: "Two hearts, one beautiful journey, and a lifetime of love ahead",
   },
 
-  // Theme Colors (Elegant Sri Lankan Wedding Theme)
+  // Theme Colors (Elegant Blue Wedding Theme)
   theme: {
-    primary: "#b8860b", // Rich gold
-    secondary: "#8b4513", // Warm brown
-    accent: "#e8a87c", // Soft coral
-    background: "#fffaf5", // Warm ivory
-    text: "#3d3d3d", // Soft charcoal
+    primary: "#1e3a8a", // Deep navy blue
+    secondary: "#475569", // Slate blue
+    accent: "#7dd3fc", // Light powder blue
+    background: "#f8fafc", // Very light slate
+    text: "#0f172a", // Slate 900
   },
 
   // RSVP Settings
   rsvp: {
     deadline: "September 15, 2026",
     contactEmail: "hdilshan.fernando11@gmail.com",
-    contactPhone: "+94 71 379 7147",
+    contactPhoneGroom: "+94 71 379 7147",
+    contactPhoneBride: "+94 71 526 6125",
   },
 
   // Footer Message

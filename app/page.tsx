@@ -5,7 +5,6 @@ import {
   CountdownSection,
   EventDetails,
   GallerySection,
-  RSVPForm,
   Footer,
 } from "./components";
 
@@ -17,7 +16,6 @@ export default function Home() {
       <CountdownSection />
       <EventDetails />
       <GallerySection />
-      <RSVPForm />
       <Footer />
     </WeddingLayout>
   );

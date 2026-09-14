@@ -277,7 +277,7 @@ export function RSVPForm() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <Text variant="caption" className="text-wedding-text/60 mb-4 sm:mb-6 block text-xs sm:text-sm">
-            Questions? Contact Dilshan:
+            Questions? Contact {couple.groomShort} or {couple.brideShort}:
           </Text>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
@@ -292,14 +292,25 @@ export function RSVPForm() {
               </Text>
             </a>
             <a
-              href={`tel:${rsvp.contactPhone.replace(/\s/g, '')}`}
-              className="group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/80 hover:bg-white border border-wedding-accent/15 hover:border-wedding-accent/30 shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto justify-center"
+              href={`tel:${rsvp.contactPhoneGroom.replace(/\s/g, '')}`}
+              className="group flex flex-row items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/80 hover:bg-white border border-wedding-accent/15 hover:border-wedding-accent/30 shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto justify-center whitespace-nowrap"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-blush flex items-center justify-center">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-blush flex items-center justify-center shrink-0">
                 <Icon name="phone" size="sm" className="text-wedding-accent" />
               </div>
               <Text variant="caption" className="text-wedding-text/80 font-medium text-xs sm:text-sm">
-                {rsvp.contactPhone}
+                {couple.groomShort} {rsvp.contactPhoneGroom}
+              </Text>
+            </a>
+            <a
+              href={`tel:${rsvp.contactPhoneBride.replace(/\s/g, '')}`}
+              className="group flex flex-row items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/80 hover:bg-white border border-wedding-accent/15 hover:border-wedding-accent/30 shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto justify-center whitespace-nowrap"
+            >
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-wedding-blush flex items-center justify-center shrink-0">
+                <Icon name="phone" size="sm" className="text-wedding-accent" />
+              </div>
+              <Text variant="caption" className="text-wedding-text/80 font-medium text-xs sm:text-sm">
+                {couple.brideShort} {rsvp.contactPhoneBride}
               </Text>
             </a>
           </div>
